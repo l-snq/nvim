@@ -1,17 +1,20 @@
 set nocompatible
-
+"this is stuff I want to call before the plug list
+function! g:BuffetSetCustomColors()
+  
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#D9BB80 guifg=#FFFFFF
+  hi! BuffetActiveBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#87AF87 guifg=#FFFFFF
+  hi! BuffetTrunc cterm=NONE ctermbg=5 ctermfg=8 guibg=#87AF87 guifg=#FFFFFF
+  hi! BuffetTab cterm=NONE ctermbg=5 cterm=8 guibg=#87AF87 guifg=#FFFFFF
+endfunction
 call plug#begin()
 
 " My visual stuff
 Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
-Plug 'franbach/miramare'
-
-"all the navigation tools i need
+Plug 'franbach/miramare' "all the navigation tools i need
 Plug 'preservim/nerdtree'
 Plug 'bagrat/vim-buffet'
-Plug 'easymotion/vim-easymotion'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -19,11 +22,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot' "this is to load all LSP'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
-
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'release'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+"Fuzzy finding
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 " Some dependencies
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
 Plug 'SirVer/ultisnips'
 call plug#end()
 
@@ -39,7 +46,7 @@ set preserveindent
 set hidden
 set nobackup
 set nowritebackup
-set softtabstop=0
+set softtabstop=0 
 set autoindent
 set smartindent
 set mouse=a 
@@ -50,21 +57,25 @@ set encoding=UTF-8
 
 
 
+
 "my colorscheme
 set termguicolors
+
 let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
 
 colorscheme miramare
 
-"config for easymotion
 
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-nmap s <Plug>(easymotion-overwin-f2)
-
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+noremap <Tab> :bn<CR>
+noremap <S-Tab> :bp<CR>
+noremap <Leader><Tab> :Bw<CR>
+noremap <Leader><S-Tab> :Bw!<CR>
+noremap <C-t> :tabnew split<CR>
 nmap <leader>1 <Plug>BuffetSwitch(1)
 nmap <leader>2 <Plug>BuffetSwitch(2)
 nmap <leader>3 <Plug>BuffetSwitch(3)
@@ -75,7 +86,9 @@ nmap <leader>7 <Plug>BuffetSwitch(7)
 nmap <leader>8 <Plug>BuffetSwitch(8)
 nmap <leader>9 <Plug>BuffetSwitch(9)
 nmap <leader>0 <Plug>BuffetSwitch(10)
-let g:buffet_use_devicons = 0
+
+
+let g:buffet_use_devicons = 1
 
 let g:buffet_powerline_separators = 1
 let g:buffet_tab_icon = "\uf00a"
@@ -115,7 +128,7 @@ nmap <silent> gr <Plug>(coc-references)
 
 
 " airline config
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0 
 
 let g:airline_powerline_fonts = 1
 " Use K to show documentation in preview window.
@@ -131,6 +144,11 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" nerd tree configurations
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -225,4 +243,4 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 
 nmap W <esc>/[A-Z]<CR>:noh<CR>
-nmap B <esc>/[A-Z]<CR>N:noh<CR>
+
