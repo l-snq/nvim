@@ -4,8 +4,6 @@ function! g:BuffetSetCustomColors()
   
   hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#D9BB80 guifg=#FFFFFF
   hi! BuffetActiveBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#87AF87 guifg=#FFFFFF
-  hi! BuffetTrunc cterm=NONE ctermbg=5 ctermfg=8 guibg=#87AF87 guifg=#FFFFFF
-  hi! BuffetTab cterm=NONE ctermbg=5 cterm=8 guibg=#87AF87 guifg=#FFFFFF
 endfunction
 call plug#begin()
 
@@ -25,6 +23,13 @@ Plug 'liuchengxu/vista.vim'
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'release'}
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+"nvim cmp 
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 "Fuzzy finding
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -56,7 +61,59 @@ set shortmess+=c
 set encoding=UTF-8
 
 
+set completeopt=menu,menuone,noselect
+" this is a bunch of cmp setup
+lua<<EOF
+  local cmp = require'cmp'
+    
+    cmp.setup({
+      snippet = {
+        expand = function(args)
+          vim.fn["vsnip#anonymous"](args.body)
+          end,
+      },
+      mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      }),
+      sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+      }, {
+      { name = 'buffer' },
+      })
+    })
+  cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+    { name = 'cmp_git' },
+    }, {
+    { name = 'buffer' },
+    })
+  })
 
+
+  cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' },
+      }
+    })
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
+
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  require('lspconfig')['rust_analyzer'].setup {
+    capabilities = capabilities
+    }
+EOF
 
 "my colorscheme
 set termguicolors
@@ -218,7 +275,10 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-snippets', 'coc-pyright', 'coc-rust-analyzer', 'coc-tsserver', 'coc-clangd', 'coc-json', 'coc-markdownlint', 'coc-solargraph']
 
-
+"telescope configurations
+lua << EOF
+require('telescope').setup{}
+EOF
 
 " Vista
 "
