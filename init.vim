@@ -12,10 +12,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
 Plug 'franbach/miramare' "all the navigation tools i need
 Plug 'preservim/nerdtree'
-Plug 'bagrat/vim-buffet'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
+Plug 'kyazdani42/nvim-web-devicons' 
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 "languages & auto completes
 Plug 'sheerun/vim-polyglot' "this is to load all LSP'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -117,7 +115,10 @@ EOF
 
 "my colorscheme
 set termguicolors
-
+" for bufferline
+lua << EOF
+require("bufferline").setup{}
+EOF
 let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
 
@@ -133,24 +134,9 @@ noremap <S-Tab> :bp<CR>
 noremap <Leader><Tab> :Bw<CR>
 noremap <Leader><S-Tab> :Bw!<CR>
 noremap <C-t> :tabnew split<CR>
-nmap <leader>1 <Plug>BuffetSwitch(1)
-nmap <leader>2 <Plug>BuffetSwitch(2)
-nmap <leader>3 <Plug>BuffetSwitch(3)
-nmap <leader>4 <Plug>BuffetSwitch(4)
-nmap <leader>5 <Plug>BuffetSwitch(5)
-nmap <leader>6 <Plug>BuffetSwitch(6)
-nmap <leader>7 <Plug>BuffetSwitch(7)
-nmap <leader>8 <Plug>BuffetSwitch(8)
-nmap <leader>9 <Plug>BuffetSwitch(9)
-nmap <leader>0 <Plug>BuffetSwitch(10)
+"bufferline mapping
+nnoremap <silent> gb :BufferLinePick<CR>
 
-
-let g:buffet_use_devicons = 1
-
-let g:buffet_powerline_separators = 1
-let g:buffet_tab_icon = "\uf00a"
-let g:buffet_left_trunc_icon = "\uf0a8"
-let g:buffet_right_trunc_icon = "\uf0a9"
 " coc config
 set signcolumn=number
 
@@ -182,6 +168,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" bufferline keybindings
+nnoremap <silent>[b :BufferLineCycleNext<CR>
+nnoremap <silent>]b :BufferLineCyclePrev<CR>
 
 
 " airline config
@@ -205,7 +194,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " nerd tree configurations
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
