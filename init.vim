@@ -10,17 +10,22 @@ call plug#begin()
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'junegunn/seoul256.vim'
-    Plug 'franbach/miramare'
     Plug 'sheerun/vim-polyglot'
-    Plug 'ulwlu/elly.vim'
     Plug 'akinsho/bufferline.nvim'
     Plug 'preservim/nerdtree'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     Plug 'nvim-lua/plenary.nvim'
     Plug 'BurntSushi/ripgrep'
     Plug 'windwp/nvim-autopairs'
-    
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    " color themes
+    Plug 'franbach/miramare'
+    Plug 'ulwlu/elly.vim'
+    Plug 'ntk148v/komau.vim' 
+    Plug 'AxolotlC/Fox'
+    Plug 'habamax/vim-habamax'
+    Plug 'axvr/raider.vim'
 call plug#end()
 
 set expandtab
@@ -33,6 +38,12 @@ set termguicolors
 
 let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
 lua <<EOF
 require("bufferline").setup{}
 EOF
@@ -130,11 +141,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" com! WP call WordProcessorMode()
-colorscheme elly
-au InsertLeave * colorscheme elly
-au InsertEnter * colorscheme elly
-
+colorscheme habamax
 " NERDTree bindings to make it fit how i want it
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
