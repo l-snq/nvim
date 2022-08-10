@@ -1,6 +1,5 @@
 set nocompatible
 
-
 call plug#begin()
     Plug 'ryanoasis/vim-devicons'
     Plug 'kyazdani42/nvim-web-devicons'
@@ -10,6 +9,10 @@ call plug#begin()
     Plug 'nvim-lua/plenary.nvim'
     Plug 'BurntSushi/ripgrep'
     Plug 'windwp/nvim-autopairs'
+
+    Plug 'mhinz/vim-startify'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
     " color themes
     Plug 'franbach/miramare'
@@ -46,6 +49,7 @@ call plug#begin()
     Plug 'mfussenegger/nvim-dap'
 call plug#end()
 
+
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -55,8 +59,9 @@ set number
 set termguicolors
 set splitright
 set autochdir
+" alpha vim setup
 
-colorscheme fantasy 
+colorscheme raider 
 
 let g:coc_global_extensions = [
             \ 'coc-tsserver',
@@ -76,7 +81,6 @@ func! WordProcessorMode()
 
     setlocal smartindent
     setlocal spell spelllang=en_us
-    setlocal noexpandtab
 endfu
 " some keybindings
 nnoremap <silent>[b :BufferLineCycleNext<CR>
@@ -98,7 +102,6 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " NERDTree bindings to make it fit how i want it
 autocmd StdinReadPre * let s:std_in=1
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 autocmd VimResized * wincmd =
 lua <<EOF
 require("nvim-autopairs").setup{}
