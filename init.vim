@@ -62,7 +62,10 @@ set autochdir
 " alpha vim setup
 
 colorscheme thornbird 
-
+"airline stuff 
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_theme='wombat'
+let g:airline_powerline_fonts = 1
 let g:coc_global_extensions = [
             \ 'coc-tsserver',
             \ 'coc-prettier',
