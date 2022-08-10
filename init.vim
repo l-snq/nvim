@@ -61,7 +61,7 @@ set splitright
 set autochdir
 " alpha vim setup
 
-colorscheme raider 
+colorscheme thornbird 
 
 let g:coc_global_extensions = [
             \ 'coc-tsserver',
