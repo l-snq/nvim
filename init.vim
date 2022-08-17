@@ -10,7 +10,7 @@ call plug#begin()
     Plug 'BurntSushi/ripgrep'
     Plug 'windwp/nvim-autopairs'
 
-    Plug 'mhinz/vim-startify'
+    Plug 'glepnir/dashboard-nvim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
@@ -24,6 +24,8 @@ call plug#begin()
     Plug 'szorfein/fantasy.vim'
     Plug 'xiaody/thornbird.vim'
     Plug 'CreaturePhil/vim-handmade-hero'
+    Plug 'junegunn/seoul256.vim'
+    Plug 'jnurmine/Zenburn'
     "coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     
@@ -59,12 +61,35 @@ set number
 set termguicolors
 set splitright
 set autochdir
+
 " alpha vim setup
 
-colorscheme thornbird 
+colorscheme Zenburn
+" dashboard stuff
+lua <<EOF
+  local db = require('dashboard')
+  db.custom_header = {
+'',
+   '▄█▀─▄▄▄▄▄▄▄─▀█▄',
+  '▀█████████████▀',
+   '──█▄███▄█',
+   '───█████',
+   '───█▀█▀█',
+'',
+'',
+}
+
+
+  db.custom_center = {
+{icon = '  ',
+      desc = 'welcome :)',
+      }
+      }
+EOF
+
 "airline stuff 
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_theme='wombat'
+let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 let g:coc_global_extensions = [
             \ 'coc-tsserver',
@@ -77,6 +102,10 @@ require("bufferline").setup{}
 EOF
 " set the leader key
 let mapleader = ","
+
+
+" seoul 256 configurations
+let g:seoul256_background = 235 
 
 func! WordProcessorMode()
 
@@ -99,13 +128,11 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " bindings for coc.nvim
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-" NERDTree bindings to make it fit how i want it
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimResized * wincmd =
 lua <<EOF
 require("nvim-autopairs").setup{}
 EOF
