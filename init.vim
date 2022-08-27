@@ -8,7 +8,6 @@ call plug#begin()
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     Plug 'nvim-lua/plenary.nvim'
     Plug 'BurntSushi/ripgrep'
-    Plug 'windwp/nvim-autopairs'
 
     Plug 'glepnir/dashboard-nvim'
     Plug 'vim-airline/vim-airline'
@@ -49,6 +48,8 @@ call plug#begin()
     Plug 'plasticboy/vim-markdown'
     Plug 'tikhomirov/vim-glsl'
     Plug 'mfussenegger/nvim-dap'
+    " GIIIIIIIIT :D 
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
@@ -58,13 +59,13 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set number 
-set termguicolors
+"set termguicolors
 set splitright
 set autochdir
 
 " alpha vim setup
 
-colorscheme Zenburn
+"colorscheme miramare 
 " dashboard stuff
 lua <<EOF
   local db = require('dashboard')
@@ -133,7 +134,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-lua <<EOF
-require("nvim-autopairs").setup{}
-EOF
-" auto pairs is my bracket completion plugin
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
