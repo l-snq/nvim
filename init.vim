@@ -24,7 +24,14 @@ call plug#begin()
     Plug 'xiaody/thornbird.vim'
     Plug 'CreaturePhil/vim-handmade-hero'
     Plug 'junegunn/seoul256.vim'
+    Plug 'sainnhe/everforest'
+    Plug 'arzg/vim-mayanfog'
     Plug 'jnurmine/Zenburn'
+    Plug 'aktersnurra/no-clown-fiesta.nvim'
+    Plug 'rose-pine/neovim'
+    Plug 'AlessandroYorba/Despacio'
+    Plug 'scottymoon/vim-twilight'
+
     "coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     
@@ -59,13 +66,14 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set number 
-"set termguicolors
+set relativenumber
+set termguicolors
 set splitright
 set autochdir
 
 " alpha vim setup
-
-"colorscheme miramare 
+let g:despacio_Sunset = 1
+colorscheme despacio 
 " dashboard stuff
 lua <<EOF
   local db = require('dashboard')
@@ -106,7 +114,7 @@ let mapleader = ","
 
 
 " seoul 256 configurations
-let g:seoul256_background = 235 
+"let g:seoul256_background = 238 
 
 func! WordProcessorMode()
 
@@ -134,8 +142,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1):
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap {<CR> {<CR>}<Esc>0
+inoremap [ []<Esc>i
+inoremap < <><Esc>i
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
