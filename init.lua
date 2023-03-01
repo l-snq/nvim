@@ -194,7 +194,12 @@ vim.cmd[[
 
 nnoremap <silent><leader>n :BufferLineCycleNext<CR>
 nnoremap <silent><leader>b :BufferLineCyclePrev<CR>
+nnoremap <silent><leader>g :BufferLinePick<CR>
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 ]]
 --vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 -- [[ Highlight on yank ]]
