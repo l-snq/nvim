@@ -26,6 +26,16 @@ require('packer').startup(function(use)
     },
   }
 
+  use 'alvan/vim-closetag'
+
+  use 'simrat39/rust-tools.nvim'
+
+  -- debugging
+  use 'nvim-lua/plenary.nvim'
+  use 'mfussenegger/nvim-dap'
+
+  use {'neoclide/coc.nvim', branch = 'release'}
+
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
@@ -55,6 +65,7 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   use 'junegunn/seoul256.vim'
+  use 'franbach/miramare'
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -63,6 +74,7 @@ require('packer').startup(function(use)
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+  
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
 use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
@@ -102,6 +114,17 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
+local rt = require("rust-tools")
+
+rt.setup({
+    server = {
+      on_attach = function(_, bufnr)
+      -- hover actions
+        vim.keymap.set("n", "<leader>a", rt.hover_actions.hover_actions, { buffer = bufnr })
+        vim.keymap.set("n", "<leader>d", rt.code_action_group.code_action_group, { buffer = bufnr })
+      end,
+  },
+})
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
@@ -111,6 +134,9 @@ vim.o.hlsearch = false
 -- Make line numbers default
 vim.wo.number = true
 
+-- set cursor columns and lines
+vim.o.cursorcolumn = true;
+vim.o.cursorline = true;
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -123,6 +149,7 @@ vim.o.relativenumber = true
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
+-- setup for closte tags
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -130,7 +157,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme seoul256]]
+vim.cmd [[colorscheme miramare]]
 
 vim.opt.termguicolors = true
 require("bufferline").setup{
@@ -153,6 +180,7 @@ vim.g.maplocalleader = ', '
 vim.cmd[[
   nnoremap <silent><leader>t :NvimTreeToggle<CR>
   nnoremap <silent><leader>c :NvimTreeCollapse<CR>
+  nnoremap <silent><leader>r :vsplit<CR>
 ]]
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -166,6 +194,7 @@ vim.cmd[[
 
 nnoremap <silent><leader>n :BufferLineCycleNext<CR>
 nnoremap <silent><leader>b :BufferLineCyclePrev<CR>
+
 ]]
 --vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 -- [[ Highlight on yank ]]
@@ -184,9 +213,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'seoul256',
-    component_separators = '|',
-    section_separators = '',
+    theme = 'gruvbox-material',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
   },
 }
 
@@ -366,17 +395,15 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
+   rust_analyzer = {},
+   tsserver = {},
 
-  sumneko_lua = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
+   -- sumneko_lua = {
+    --Lua = {
+     -- workspace = { checkThirdParty = false },
+      --telemetry = { enable = false },
+   -- },
+ -- },
 }
 
 -- Setup neovim lua configuration
