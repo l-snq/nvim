@@ -66,6 +66,7 @@ require('packer').startup(function(use)
 
   use 'junegunn/seoul256.vim'
   use 'franbach/miramare'
+  use 'arcticicestudio/nord-vim'
   use 'xiyaowong/nvim-transparent'
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
@@ -158,7 +159,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme miramare]]
+vim.cmd [[colorscheme nord]]
 
 vim.opt.termguicolors = true
 require("bufferline").setup{
@@ -226,7 +227,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'everforest',
+    theme = 'nord',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
   },

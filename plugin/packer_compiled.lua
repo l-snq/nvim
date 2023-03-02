@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
   },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/nvim-cmp",
