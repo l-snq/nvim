@@ -226,7 +226,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'gruvbox-material',
+    theme = 'everforest',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
   },
