@@ -66,6 +66,7 @@ require('packer').startup(function(use)
 
   use 'junegunn/seoul256.vim'
   use 'franbach/miramare'
+  use 'xiyaowong/nvim-transparent'
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -166,6 +167,11 @@ require("bufferline").setup{
   }
 }
 
+require("transparent").setup({
+  enable = true,
+
+})
+
 require('nvim-tree').setup()
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -181,6 +187,8 @@ vim.cmd[[
   nnoremap <silent><leader>t :NvimTreeToggle<CR>
   nnoremap <silent><leader>c :NvimTreeCollapse<CR>
   nnoremap <silent><leader>r :vsplit<CR>
+
+  tnoremap <esc> <C-\><C-N>
 ]]
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
