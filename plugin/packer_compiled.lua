@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  everforest = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   fd = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/fd",
@@ -124,10 +129,10 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
-  ["lualine.nvim"] = {
+  ["lush.nvim"] = {
     loaded = true,
-    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -149,11 +154,6 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
   },
-  ["nord-vim"] = {
-    loaded = true,
-    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/nord-vim",
-    url = "https://github.com/arcticicestudio/nord-vim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -164,10 +164,25 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-dap-virtual-text"] = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-lualine"] = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/nvim-lualine",
+    url = "https://github.com/nvim-lualine/nvim-lualine"
   },
   ["nvim-transparent"] = {
     loaded = true,
@@ -221,6 +236,11 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/seoul256.vim",
     url = "https://github.com/junegunn/seoul256.vim"
   },
+  ["telescope-dap.nvim"] = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
+    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -250,6 +270,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
+  },
+  ["zenbones.nvim"] = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
+    url = "https://github.com/mcchrish/zenbones.nvim"
   }
 }
 

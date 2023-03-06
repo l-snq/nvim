@@ -33,6 +33,9 @@ require('packer').startup(function(use)
   -- debugging
   use 'nvim-lua/plenary.nvim'
   use 'mfussenegger/nvim-dap'
+  use {'rcarriga/nvim-dap-ui', requires = {"mfussenegger/nvim-dap"}}
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
 
   use {'neoclide/coc.nvim', branch = 'release'}
 
@@ -64,11 +67,13 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
+  use { 'mcchrish/zenbones.nvim', requires = "rktjmp/lush.nvim" }
   use 'junegunn/seoul256.vim'
   use 'franbach/miramare'
-  use 'arcticicestudio/nord-vim'
+  use 'sainnhe/everforest'
   use 'xiyaowong/nvim-transparent'
-  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
+
+  use 'nvim-lualine/lualine.nvim'
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
@@ -159,7 +164,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme nord]]
+vim.cmd [[colorscheme miramare]]
 
 vim.opt.termguicolors = true
 require("bufferline").setup{
@@ -174,6 +179,11 @@ require("transparent").setup({
 })
 
 require('nvim-tree').setup()
+
+require('lualine').setup(
+)
+require('lualine').get_config()
+
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
@@ -199,6 +209,12 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- debug
+vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>")
+vim.keymap.set("n", "<F6>", ":lua require'dapui'.open()<CR>")
+vim.keymap.set("n", "<F7>", ":lua require'dapui'.toggle()<CR>")
+vim.keymap.set("n", "<leader>tb", ":lua require'dap'.toggle_breakpoint()<CR>")
+
 vim.cmd[[
 
 nnoremap <silent><leader>n :BufferLineCycleNext<CR>
@@ -222,16 +238,39 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- Set lualine as statusline
--- See `:help lualine.txt`
-require('lualine').setup {
-  options = {
-    icons_enabled = false,
-    theme = 'nord',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+
+--dap require stuff here
+local dap = require('dap')
+dap.adapters.codelldb = {
+  type = 'server',
+  port = "${port}",
+  executable = {
+    -- CHANGE THIS to your path!
+    command = '../../Downloads/lldb',
+    args = {"--port", "${port}"},
+
+    -- On windows you may have to uncomment this:
+    -- detached = false,
+  }
+}
+
+dap.configurations.rust = {
+  {
+ name = "Launch file",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
   },
 }
+
+
+-- dap ui
+require('dapui').setup()
+
 
 -- Enable Comment.nvim
 require('Comment').setup()
@@ -421,7 +460,9 @@ local servers = {
 }
 
 -- Setup neovim lua configuration
-require('neodev').setup()
+require('neodev').setup({
+library = { plugins = { "nvim-dap-ui"}, types = true},
+})
 --
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
