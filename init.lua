@@ -180,8 +180,12 @@ require("transparent").setup({
 
 require('nvim-tree').setup()
 
-require('lualine').setup(
-)
+require('lualine').setup{
+  
+  options= {
+    theme = 'gruvbox',
+  }
+}
 require('lualine').get_config()
 
 -- Set completeopt to have a better completion experience
