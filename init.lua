@@ -26,7 +26,11 @@ require('packer').startup(function(use)
     },
   }
 
+  use 'evanleck/vim-svelte'
+
   use 'alvan/vim-closetag'
+
+  use 'norcalli/nvim-colorizer.lua'
 
   use 'simrat39/rust-tools.nvim'
 
@@ -50,6 +54,15 @@ require('packer').startup(function(use)
     'nvim-tree/nvim-web-devicons'
   }
 
+  use {
+    "folke/trouble.nvim", 
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+    require("trouble").setup {
+      }
+    end
+  }
+
   use { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     run = function()
@@ -62,15 +75,23 @@ require('packer').startup(function(use)
     after = 'nvim-treesitter',
   }
 
+  -- markdown previewer
+  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
+
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
-  use { 'mcchrish/zenbones.nvim', requires = "rktjmp/lush.nvim" }
+  -- color schemes
   use 'junegunn/seoul256.vim'
   use 'franbach/miramare'
   use 'sainnhe/everforest'
+  use 'slugbyte/yuejiu'
+  use 'srcery-colors/srcery-vim'
+  use {'olivercederborg/poimandres.nvim',
+  config = function()
+    require('poimandres').setup {}end}
   use 'xiyaowong/nvim-transparent'
 
   use 'nvim-lualine/lualine.nvim'
@@ -78,6 +99,9 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
   use {'akinsho/bufferline.nvim', tag = 'v3.*', requries = 'nvim-tree/nvim-web-devicons'}
+
+  -- theme creator
+  use 'rktjmp/lush.nvim'
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -132,6 +156,8 @@ rt.setup({
       end,
   },
 })
+
+-- colorizer for hex codes
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
@@ -163,10 +189,12 @@ vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
+vim.opt.background = 'dark'
 vim.o.termguicolors = true
-vim.cmd [[colorscheme miramare]]
+vim.cmd [[colorscheme everforest]]
 
 vim.opt.termguicolors = true
+require'colorizer'.setup()
 require("bufferline").setup{
   options = {
     numbers = "both"
@@ -183,7 +211,7 @@ require('nvim-tree').setup()
 require('lualine').setup{
   
   options= {
-    theme = 'gruvbox',
+    theme = 'everforest',
   }
 }
 require('lualine').get_config()
@@ -199,10 +227,17 @@ vim.g.mapleader = ','
 vim.g.maplocalleader = ', '
 
 vim.cmd[[
-  nnoremap <silent><leader>t :NvimTreeToggle<CR>
-  nnoremap <silent><leader>c :NvimTreeCollapse<CR>
-  nnoremap <silent><leader>r :vsplit<CR>
+  nnoremap <silent><leader>tt :NvimTreeToggle<CR>
+  nnoremap <silent><leader>tc :NvimTreeCollapse<CR>
+  nnoremap <silent><leader>sv :vsplit<CR>
+  nnoremap <silent><leader>sh :Gsplit<CR>
 
+  nnoremap <leader>xx <cmd>TroubleToggle<cr>
+  nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
+  nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
+  nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+  nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+  
   tnoremap <esc> <C-\><C-N>
 ]]
 -- Keymaps for better default experience
@@ -241,7 +276,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
-
+-- cut HERE
 
 --dap require stuff here
 local dap = require('dap')
@@ -335,7 +370,7 @@ vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'svelte', 'help', 'vim' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -451,9 +486,10 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
+   clangd = {},
    rust_analyzer = {},
    tsserver = {},
+   svelte = {},
 
    -- sumneko_lua = {
     --Lua = {
