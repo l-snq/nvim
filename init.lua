@@ -191,7 +191,7 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 vim.opt.background = 'dark'
 vim.o.termguicolors = true
-vim.cmd [[colorscheme rose-pine]]
+vim.cmd [[colorscheme miramare]]
 
 vim.opt.termguicolors = true
 
@@ -204,7 +204,7 @@ require("bufferline").setup{
   options = {
     numbers = "both",
 
---    separator_style = "slant" ,
+    separator_style = "slope" ,
   }
 }
 
