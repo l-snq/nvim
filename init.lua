@@ -84,6 +84,7 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   -- color schemes
+  use 'rose-pine/neovim'
   use 'junegunn/seoul256.vim'
   use 'franbach/miramare'
   use 'sainnhe/everforest'
@@ -92,7 +93,6 @@ require('packer').startup(function(use)
   use {'olivercederborg/poimandres.nvim',
   config = function()
     require('poimandres').setup {}end}
-  use 'xiyaowong/nvim-transparent'
 
   use 'nvim-lualine/lualine.nvim'
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
@@ -191,27 +191,29 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 vim.opt.background = 'dark'
 vim.o.termguicolors = true
-vim.cmd [[colorscheme everforest]]
+vim.cmd [[colorscheme rose-pine]]
 
 vim.opt.termguicolors = true
+
+require('rose-pine').setup( {
+
+  disable_background = true,
+})
 require'colorizer'.setup()
 require("bufferline").setup{
   options = {
-    numbers = "both"
+    numbers = "both",
+
+--    separator_style = "slant" ,
   }
 }
-
-require("transparent").setup({
-  enable = true,
-
-})
 
 require('nvim-tree').setup()
 
 require('lualine').setup{
   
   options= {
-    theme = 'everforest',
+    theme = 'auto',
   }
 }
 require('lualine').get_config()
@@ -239,6 +241,9 @@ vim.cmd[[
   nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
   
   tnoremap <esc> <C-\><C-N>
+
+  set clipboard+=unnamedplus
+
 ]]
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
