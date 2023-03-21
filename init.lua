@@ -28,7 +28,8 @@ require('packer').startup(function(use)
 
   use 'evanleck/vim-svelte'
 
-  use 'alvan/vim-closetag'
+--  use 'alvan/vim-closetag'
+  use 'windwp/nvim-ts-autotag'
 
   use 'norcalli/nvim-colorizer.lua'
 
@@ -42,6 +43,7 @@ require('packer').startup(function(use)
   use 'nvim-telescope/telescope-dap.nvim'
 
   use {'neoclide/coc.nvim', branch = 'release'}
+
 
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -157,6 +159,8 @@ rt.setup({
   },
 })
 
+-- nvim-ts-autotag setup
+require('nvim-ts-autotag').setup()
 -- colorizer for hex codes
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -182,23 +186,21 @@ vim.o.relativenumber = true
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
--- setup for closte tags
-
 -- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
-vim.opt.background = 'dark'
+-- vim.opt.background = 'dark'
 vim.o.termguicolors = true
 vim.cmd [[colorscheme miramare]]
 
 vim.opt.termguicolors = true
 
-require('rose-pine').setup( {
+--require('rose-pine').setup( {
 
-  disable_background = true,
-})
+ -- disable_background = true,
+--})
 require'colorizer'.setup()
 require("bufferline").setup{
   options = {
