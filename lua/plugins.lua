@@ -48,6 +48,15 @@ require('packer').startup(function(use)
     'hrsh7th/nvim-cmp',
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   }
+  use 'rose-pine/neovim'
+  use 'junegunn/seoul256.vim'
+  use 'franbach/miramare'
+  use 'sainnhe/everforest'
+  use 'slugbyte/yuejiu'
+  use 'srcery-colors/srcery-vim'
+  use {'olivercederborg/poimandres.nvim',
+  config = function()
+    require('poimandres').setup {}end}
 
   use { 'nvim-tree/nvim-tree.lua'}
   use { -- webdev icons 
@@ -126,9 +135,9 @@ if is_bootstrap then
 end
 
 -- Automatically source and re-compile packer whenever you save this init.lua
-local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
-vim.api.nvim_create_autocmd('BufWritePost', {
-  command = 'source <afile> | silent! LspStop | silent! LspStart | PackerCompile',
-  group = packer_group,
-  pattern = vim.fn.expand '$MYVIMRC',
-})
+--local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+--vim.api.nvim_create_autocmd('BufWritePost', {
+ -- command = 'source <afile> | silent! LspStop | silent! LspStart | PackerCompile',
+  --group = packer_group,
+--  pattern = vim.fn.expand '$MYVIMRC',
+--})

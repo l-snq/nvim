@@ -25,6 +25,7 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- debug
+vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>")
 vim.keymap.set("n", "<F6>", ":lua require'dapui'.open()<CR>")
 vim.keymap.set("n", "<F7>", ":lua require'dapui'.toggle()<CR>")
