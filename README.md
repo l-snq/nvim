@@ -11,10 +11,14 @@
 - plenary
 - ripgrep
 - autopairs for brackets
-- vim airline
+- lualine
 - miramare colors
-- elly colors
-- komau colors
-- fox colors
-- habamax colors
-- raider colors
+
+## TODO : CLEAN UP YOUR FILES
+- keybindings
+- colorscheme config
+- options
+- plugins
+- bufferline config // fix transparency problems
+- lualine config // fix coloring issues with the auto theme
+

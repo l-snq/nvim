@@ -195,7 +195,6 @@ vim.wo.signcolumn = 'yes'
 vim.o.termguicolors = true
 vim.g.miramare_transparent_background = true
 vim.g.miramare_enable_italic_string = true
-vim.g.miramare_cursor = 'green'
 
 vim.cmd [[colorscheme miramare]]
 
@@ -205,13 +204,14 @@ require('rose-pine').setup( {
 })
 require'colorizer'.setup()
 require("bufferline").setup{
-  options = {
-    numbers = "both",
+    options = {
+      separator_style = "thick" ,
+      show_buffer_close_icon = false,
+      show_close_icon = false,
+      color_icons = true,
+    },
+  
 
-    separator_style = "thick" ,
-    indicator = {
-    style = 'none'}
-  }
 }
 
 require('nvim-tree').setup()
