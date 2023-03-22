@@ -193,20 +193,24 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 -- vim.opt.background = 'dark'
 vim.o.termguicolors = true
+vim.g.miramare_transparent_background = true
+vim.g.miramare_enable_italic_string = true
+vim.g.miramare_cursor = 'green'
+
 vim.cmd [[colorscheme miramare]]
 
-vim.opt.termguicolors = true
+require('rose-pine').setup( {
 
---require('rose-pine').setup( {
-
- -- disable_background = true,
---})
+ disable_background = true,
+})
 require'colorizer'.setup()
 require("bufferline").setup{
   options = {
     numbers = "both",
 
-    separator_style = "slope" ,
+    separator_style = "thick" ,
+    indicator = {
+    style = 'none'}
   }
 }
 
