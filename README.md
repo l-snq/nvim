@@ -10,6 +10,7 @@
 - plenary
 - ripgrep
 - autopairs for brackets
+- nvim pairs
 - lualine
 - miramare colors
 
