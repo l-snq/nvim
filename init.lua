@@ -1,8 +1,8 @@
-require("options")
+
 require("plugins")
+require("options")
 require("colorscheme")
 require("snippets")
-require("plugins")
 require("keybindings")
 require("configurations")
 
