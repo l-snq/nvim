@@ -20,21 +20,48 @@ require('rose-pine').setup( {
  disable_background = true,
 })
 require'colorizer'.setup()
-require("bufferline").setup{
+require("bufferline").setup({
     options = {
-      separator_style = "thick" ,
+      separator_style = "padded_slant" ,
+      buffer_close_icon = "",
+      always_show_bufferline = false,
       show_buffer_close_icon = false,
       show_close_icon = false,
       color_icons = true,
     },
-  
-
-}
+   highlights = {
+      separator = {
+        fg = '#242021',
+        bg = '#2a2426',
+      },
+      separator_selected = {
+        fg = '#242021',
+        bg = '#3c3638',
+      },
+      background = {
+        fg = '#d9bb80',
+        bg = '#2a2426'
+      },
+      buffer_selected = {
+        fg = '#fdf6e3',
+        bg = '#3c3638',
+        bold = true,
+      },
+      fill = {
+        bg = '#242021'
+      },
+      close_button_selected = {
+        bg = '#3c3638'
+      },
+      close_button = {
+        bg = '#2a2426'
+      }
+    },
+})
 
 require('nvim-tree').setup()
 
 require('lualine').setup{
-  
   options= {
     theme = 'auto',
   }
