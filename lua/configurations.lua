@@ -55,7 +55,13 @@ require("bufferline").setup({
       },
       close_button = {
         bg = '#2a2426'
-      }
+      },
+      modified_visible = {
+        bg = '#2a2426',
+      },
+      modified_selected = {
+        bg = '#3c3638'
+      },
     },
 })
 
