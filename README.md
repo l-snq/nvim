@@ -14,3 +14,4 @@
 - lualine
 - miramare colors
 
+## TODO
