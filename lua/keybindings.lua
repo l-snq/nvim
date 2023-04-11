@@ -33,8 +33,8 @@ vim.keymap.set("n", "<leader>tb", ":lua require'dap'.toggle_breakpoint()<CR>")
 
 vim.cmd[[
 
-nnoremap <silent><leader>n :BufferLineCycleNext<CR>
-nnoremap <silent><leader>b :BufferLineCyclePrev<CR>
+nnoremap <silent><Tab> :BufferLineCycleNext<CR>
+nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
 nnoremap <silent><leader>g :BufferLinePick<CR>
 
 nnoremap <C-J> <C-W><C-J>
