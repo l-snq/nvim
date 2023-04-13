@@ -41,6 +41,8 @@ vim.o.completeopt = 'menuone,noselect'
 vim.g.mapleader = ','
 vim.g.maplocalleader = ', '
 
+vim.cmd[[set wrap linebreak]]
+
 vim.diagnostic.config({
   float = {
     source = 'always',
