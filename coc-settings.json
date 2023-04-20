@@ -1,3 +1,9 @@
 {
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "languageserver": {
+    "wgsl": {
+      "command": "wgsl_analyzer",
+      "filetypes": ["wgsl"]
+    }
+  }
 }

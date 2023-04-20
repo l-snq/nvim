@@ -22,7 +22,7 @@ require('rose-pine').setup( {
 require'colorizer'.setup()
 require("bufferline").setup({
     options = {
-      separator_style = "padded_slant" ,
+      separator_style = "slope" ,
       buffer_close_icon = "",
       always_show_bufferline = true,
       show_buffer_close_icon = false,
@@ -229,6 +229,7 @@ local servers = {
    rust_analyzer = {},
    tsserver = {},
    svelte = {},
+   wgsl_analyzer = {},
 
    -- sumneko_lua = {
     --Lua = {
@@ -266,6 +267,11 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+-- set up so that wgsl files are read for syntax
+vim.cmd[[
+  au BufNewFile,BufRead *.wgsl set filetype=wgsl
+]]
 
 -- Turn on lsp status information
 require('fidget').setup()

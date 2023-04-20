@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
       'folke/neodev.nvim',
     },
   }
+  -- glsl/wgsl syntax highlighting
+  use 'tikhomirov/vim-glsl'
 
   use 'evanleck/vim-svelte'
 
@@ -56,12 +58,10 @@ return require('packer').startup(function(use)
   use 'junegunn/seoul256.vim'
   use 'franbach/miramare'
   use 'sainnhe/everforest'
-  use 'slugbyte/yuejiu'
-  use 'srcery-colors/srcery-vim'
   use {'olivercederborg/poimandres.nvim',
-  config = function()
-    require('poimandres').setup {}end}
-
+    config = function()
+      require('poimandres').setup {}end}
+  use "daschw/leaf.nvim"
   use { 'nvim-tree/nvim-tree.lua'}
   use { -- webdev icons 
 
@@ -107,9 +107,6 @@ return require('packer').startup(function(use)
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
   use {'akinsho/bufferline.nvim', tag = 'v3.*', requries = 'nvim-tree/nvim-web-devicons'}
-
-  -- theme creator
-  use 'rktjmp/lush.nvim'
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }

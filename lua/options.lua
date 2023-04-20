@@ -7,6 +7,10 @@ settings = {
     }
   }
 }
+-- autcmd for glsl plugin to read .wgsl files for syntax highlights
+vim.cmd[[
+  autocmd! BufNewFile, BufRead *.vs, *.fs, *.wgsl set ft=glsl
+]]
 -- Set highlight on search
 vim.o.hlsearch = false
 

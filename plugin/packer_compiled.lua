@@ -129,15 +129,15 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["leaf.nvim"] = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/leaf.nvim",
+    url = "https://github.com/daschw/leaf.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/lush.nvim",
-    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,
@@ -257,11 +257,6 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/seoul256.vim",
     url = "https://github.com/junegunn/seoul256.vim"
   },
-  ["srcery-vim"] = {
-    loaded = true,
-    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/srcery-vim",
-    url = "https://github.com/srcery-colors/srcery-vim"
-  },
   ["telescope-dap.nvim"] = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
@@ -283,6 +278,11 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-glsl"] = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/vim-glsl",
+    url = "https://github.com/tikhomirov/vim-glsl"
+  },
   ["vim-rhubarb"] = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
@@ -297,11 +297,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/vim-svelte",
     url = "https://github.com/evanleck/vim-svelte"
-  },
-  yuejiu = {
-    loaded = true,
-    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/yuejiu",
-    url = "https://github.com/slugbyte/yuejiu"
   }
 }
 
