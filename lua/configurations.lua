@@ -29,7 +29,7 @@ require("bufferline").setup({
       show_close_icon = false,
       color_icons = true,
     },
-   highlights = {
+    highlights = {
       separator = {
         fg = '#242021',
         bg = '#2a2426',

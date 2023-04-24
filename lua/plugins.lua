@@ -54,6 +54,14 @@ return require('packer').startup(function(use)
     'hrsh7th/nvim-cmp',
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   }
+
+
+  -- colors
+  use 'jnurmine/Zenburn'
+  use 'tobi-wan-kenobi/zengarden'
+  use 'novasenco/vulpo'
+  use 'lvim-tech/lvim-colorscheme'
+  use 'cideM/yui' -- this is for light mode
   use 'rose-pine/neovim'
   use 'junegunn/seoul256.vim'
   use 'franbach/miramare'

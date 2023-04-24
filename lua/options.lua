@@ -11,6 +11,7 @@ settings = {
 vim.cmd[[
   autocmd! BufNewFile, BufRead *.vs, *.fs, *.wgsl set ft=glsl
 ]]
+-- vim status line
 -- Set highlight on search
 vim.o.hlsearch = false
 

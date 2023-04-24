@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  Zenburn = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/Zenburn",
+    url = "https://github.com/jnurmine/Zenburn"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -138,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["lvim-colorscheme"] = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/lvim-colorscheme",
+    url = "https://github.com/lvim-tech/lvim-colorscheme"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,
@@ -297,6 +307,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/vim-svelte",
     url = "https://github.com/evanleck/vim-svelte"
+  },
+  vulpo = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/vulpo",
+    url = "https://github.com/novasenco/vulpo"
+  },
+  yui = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/yui",
+    url = "https://github.com/cideM/yui"
+  },
+  zengarden = {
+    loaded = true,
+    path = "/home/tastetest/.local/share/nvim/site/pack/packer/start/zengarden",
+    url = "https://github.com/tobi-wan-kenobi/zengarden"
   }
 }
 
