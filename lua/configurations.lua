@@ -1,6 +1,5 @@
 
 local rt = require("rust-tools")
-
 rt.setup({
     server = {
       on_attach = function(_, bufnr)
@@ -38,6 +37,10 @@ require("bufferline").setup({
         fg = '#242021',
         bg = '#3c3638',
       },
+      separator_visible = {
+        fg = '#242021',
+        bg = '#3c3638',
+      },
       background = {
         fg = '#d9bb80',
         bg = '#2a2426'
@@ -47,11 +50,20 @@ require("bufferline").setup({
         bg = '#3c3638',
         bold = true,
       },
+      buffer_visible = {
+        fg = '#fdf6e3',
+        bg = '#3c3638',
+        bold = true,
+      },
+
       fill = {
         bg = '#242021'
       },
       close_button_selected = {
         bg = '#3c3638'
+      },
+      close_button_visible = {
+      bg = '#3c3638'
       },
       close_button = {
         bg = '#2a2426'
@@ -166,7 +178,6 @@ pcall(require('telescope').load_extension, 'fzf')
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'svelte', 'vim' },
-
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
   incremental_selection = {
