@@ -13,5 +13,6 @@
 - nvim pairs
 - lualine
 - miramare colors
+- Transparency plugin ** this is dependent on your terminal colours, i have a repo called alacritty-themes which helps me determine the readability of white colorschemes.
 
 ## TODO

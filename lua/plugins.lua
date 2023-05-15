@@ -29,6 +29,14 @@ return require('packer').startup(function(use)
       'folke/neodev.nvim',
     },
   }
+
+  -- smooth cursor
+  use {'gen740/SmoothCursor.nvim',
+    config = function()
+      require('smoothcursor').setup()
+    end
+  }
+
   -- glsl/wgsl syntax highlighting
   use 'tikhomirov/vim-glsl'
 
@@ -55,6 +63,8 @@ return require('packer').startup(function(use)
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   }
 
+  -- for transparency:
+  use 'tribela/vim-transparent'
 
   -- colors
   use 'jnurmine/Zenburn'
