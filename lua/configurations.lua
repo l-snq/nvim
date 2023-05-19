@@ -29,53 +29,53 @@ require("bufferline").setup({
       color_icons = true,
     },
   
-    highlights = {
-      separator = {
-        fg = '#242021',
-        bg = '#2a2426',
-      },
-      separator_selected = {
-        fg = '#242021',
-        bg = '#3c3638',
-      },
-      separator_visible = {
-        fg = '#242021',
-        bg = '#3c3638',
-      },
-      background = {
-        fg = '#d9bb80',
-        bg = '#2a2426'
-      },
-      buffer_selected = {
-        fg = '#fdf6e3',
-        bg = '#3c3638',
-        bold = true,
-      },
-      buffer_visible = {
-        fg = '#fdf6e3',
-        bg = '#3c3638',
-        bold = true,
-      },
-
-      fill = {
-        bg = '#242021'
-      },
-      close_button_selected = {
-        bg = '#3c3638'
-      },
-      close_button_visible = {
-      bg = '#3c3638'
-      },
-      close_button = {
-        bg = '#2a2426'
-      },
-      modified_visible = {
-        bg = '#2a2426',
-      },
-      modified_selected = {
-        bg = '#3c3638'
-      },
-    },
+    -- highlights = {
+    --   separator = {
+    --     fg = '#242021',
+    --     bg = '#2a2426',
+    --   },
+    --   separator_selected = {
+    --     fg = '#242021',
+    --     bg = '#3c3638',
+    --   },
+    --   separator_visible = {
+    --     fg = '#242021',
+    --     bg = '#3c3638',
+    --   },
+    --   background = {
+    --     fg = '#d9bb80',
+    --     bg = '#2a2426'
+    --   },
+    --   buffer_selected = {
+    --     fg = '#fdf6e3',
+    --     bg = '#3c3638',
+    --     bold = true,
+    --   },
+    --   buffer_visible = {
+    --     fg = '#fdf6e3',
+    --     bg = '#3c3638',
+    --     bold = true,
+    --   },
+    --
+    --   fill = {
+    --     bg = '#242021'
+    --   },
+    --   close_button_selected = {
+    --     bg = '#3c3638'
+    --   },
+    --   close_button_visible = {
+    --   bg = '#3c3638'
+    --   },
+    --   close_button = {
+    --     bg = '#2a2426'
+    --   },
+    --   modified_visible = {
+    --     bg = '#2a2426',
+    --   },
+    --   modified_selected = {
+    --     bg = '#3c3638'
+    --   },
+    -- },
 })
 
 require('nvim-tree').setup()
@@ -166,7 +166,8 @@ require('telescope').setup {
       },
     },
     file_ignore_patterns = {
-      "node_modules"
+      "node_modules",
+      "target"
     }
   },
 }
