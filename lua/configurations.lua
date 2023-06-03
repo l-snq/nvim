@@ -10,6 +10,9 @@ rt.setup({
   },
 })
 
+vim.cmd[[
+  autocmd VimEnter * NvimTreeOpen
+]]
 -- nvim-ts-autotag setup
 require('nvim-ts-autotag').setup()
 -- colorizer for hex codes

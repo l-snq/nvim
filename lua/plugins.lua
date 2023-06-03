@@ -30,13 +30,6 @@ return require('packer').startup(function(use)
     },
   }
 
-  -- smooth cursor
-  use {'gen740/SmoothCursor.nvim',
-    config = function()
-      require('smoothcursor').setup()
-    end
-  }
-
   -- glsl/wgsl syntax highlighting
   use 'tikhomirov/vim-glsl'
 
