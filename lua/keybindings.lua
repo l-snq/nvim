@@ -1,4 +1,5 @@
-
+vim.keymap.set('i', '<silent><expr> <c-space>','coc#refresh()')
+vim.keymap.set('i', '<expr> <S-Tab>', 'coc#pum#visible() ? coc#pum#prev(1) : "<S-Tab>"')
 vim.cmd[[
   nnoremap <silent><leader>tt :NvimTreeToggle<CR>
   nnoremap <silent><leader>tc :NvimTreeCollapse<CR>
