@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
       'folke/neodev.nvim',
     },
   }
+  -- leap for better navigation
+  use 'ggandor/leap.nvim'
 
   -- glsl/wgsl syntax highlighting
   use 'tikhomirov/vim-glsl'

@@ -1,5 +1,3 @@
-vim.keymap.set('i', '<silent><expr> <c-space>','coc#refresh()')
-vim.keymap.set('i', '<expr> <S-Tab>', 'coc#pum#visible() ? coc#pum#prev(1) : "<S-Tab>"')
 vim.cmd[[
   nnoremap <silent><leader>tt :NvimTreeToggle<CR>
   nnoremap <silent><leader>tc :NvimTreeCollapse<CR>
@@ -16,6 +14,20 @@ vim.cmd[[
 
   set clipboard+=unnamedplus
 
+  inoremap <silent><expr> <c-space> coc#refresh()
+
+  inoremap <expr> <c-1> coc#pum_visible() ? coc#pum#next(1) : "\<c-1>"
+  inoremap <expr> <c-2> coc#pum#visible() ? coc#pum#prev(1) : "\<c-2>"
+
+  function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+  inoremap <silent><expr> <c-space>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<c-space>" :
+      \ coc#refresh()
 ]]
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`

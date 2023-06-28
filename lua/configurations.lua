@@ -10,6 +10,9 @@ rt.setup({
   },
 })
 
+-- LEAP NVIM 
+require('leap').add_default_mappings()
+
 -- nvim-ts-autotag setup
 require('nvim-ts-autotag').setup()
 -- colorizer for hex codes
