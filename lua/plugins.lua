@@ -70,6 +70,7 @@ return require('packer').startup(function(use)
   use 'tribela/vim-transparent'
 
   -- colors
+  use 'marcopaganini/mojave-vim-theme'
   use 'jnurmine/Zenburn'
   use 'tobi-wan-kenobi/zengarden'
   use 'novasenco/vulpo'
@@ -130,9 +131,11 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', tag = 'v3.*', requries = 'nvim-tree/nvim-web-devicons'}
 
   -- Fuzzy Finder (files, lsp, etc)
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
-  
-
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.2',
+      -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
   use 'BurntSushi/ripgrep'
   use 'sharkdp/fd'

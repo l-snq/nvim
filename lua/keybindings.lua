@@ -3,6 +3,7 @@ vim.cmd[[
   nnoremap <silent><leader>tc :NvimTreeCollapse<CR>
   nnoremap <silent><leader>sv :vsplit<CR>
   nnoremap <silent><leader>sh :Gsplit<CR>
+  nnoremap <silent><leader>bd :bd<CR>
 
   nnoremap <leader>xx <cmd>TroubleToggle<cr>
   nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
