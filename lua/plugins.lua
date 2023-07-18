@@ -72,10 +72,9 @@ return require('packer').startup(function(use)
   -- colors
   use 'marcopaganini/mojave-vim-theme'
   use 'jnurmine/Zenburn'
-  use 'tobi-wan-kenobi/zengarden'
   use 'novasenco/vulpo'
   use 'lvim-tech/lvim-colorscheme'
-  use 'cideM/yui' -- this is for light mode
+  use 'cideM/yui'
   use 'rose-pine/neovim'
   use 'junegunn/seoul256.vim'
   use 'franbach/miramare'
@@ -84,6 +83,7 @@ return require('packer').startup(function(use)
     config = function()
       require('poimandres').setup {}end}
   use "daschw/leaf.nvim"
+
   use { 'nvim-tree/nvim-tree.lua'}
   use { -- webdev icons 
 
