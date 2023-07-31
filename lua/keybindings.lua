@@ -11,7 +11,7 @@ vim.cmd[[
   nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
   nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 
-  nnoremap <leader>w <cmd :w<CR>
+  nnoremap <leader>ww <cmd :w<CR>
   
   tnoremap <esc> <C-\><C-N>
 

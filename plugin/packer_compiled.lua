@@ -100,6 +100,11 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  cake16 = {
+    loaded = true,
+    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/cake16",
+    url = "https://github.com/zefei/cake16"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -126,6 +131,7 @@ _G.packer_plugins = {
     url = "https://github.com/sharkdp/fd"
   },
   ["fidget.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0" },
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
@@ -299,11 +305,6 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
-  ["vim-eldar"] = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-eldar",
-    url = "https://github.com/agude/vim-eldar"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -343,15 +344,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/yui",
     url = "https://github.com/cideM/yui"
-  },
-  zengarden = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/zengarden",
-    url = "https://github.com/tobi-wan-kenobi/zengarden"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
 -- Config for: poimandres.nvim
 time([[Config for poimandres.nvim]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15poimandres\frequire\0", "config", "poimandres.nvim")
@@ -360,10 +364,6 @@ time([[Config for poimandres.nvim]], false)
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
 time([[Config for alpha-nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

@@ -29,6 +29,15 @@ return require('packer').startup(function(use)
       'folke/neodev.nvim',
     },
   }
+  use {
+  'j-hui/fidget.nvim',
+  tag = 'legacy',
+  config = function()
+    require("fidget").setup {
+      -- options
+    }
+  end,
+  }
   -- leap for better navigation
   use 'ggandor/leap.nvim'
 
@@ -70,19 +79,11 @@ return require('packer').startup(function(use)
   use 'tribela/vim-transparent'
 
   -- colors
+  use 'zefei/cake16'
   use 'marcopaganini/mojave-vim-theme'
-  use 'jnurmine/Zenburn'
-  use 'novasenco/vulpo'
   use 'lvim-tech/lvim-colorscheme'
   use 'cideM/yui'
-  use 'rose-pine/neovim'
   use 'junegunn/seoul256.vim'
-  use 'franbach/miramare'
-  use 'sainnhe/everforest'
-  use {'olivercederborg/poimandres.nvim',
-    config = function()
-      require('poimandres').setup {}end}
-  use "daschw/leaf.nvim"
 
   use { 'nvim-tree/nvim-tree.lua'}
   use { -- webdev icons 
