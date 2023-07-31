@@ -1,6 +1,7 @@
 vim.cmd[[
   nnoremap <silent><leader>tt :NvimTreeToggle<CR>
   nnoremap <silent><leader>tc :NvimTreeCollapse<CR>
+  nnoremap <silent><leader>tr :TransparentToggle<CR>
   nnoremap <silent><leader>sv :vsplit<CR>
   nnoremap <silent><leader>sh :Gsplit<CR>
   nnoremap <silent><leader>bd :bd<CR>
@@ -10,6 +11,7 @@ vim.cmd[[
   nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
   nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
   nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+
 
   nnoremap <leader>ww <cmd :w<CR>
   

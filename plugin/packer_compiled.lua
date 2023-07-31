@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  Zenburn = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/Zenburn",
-    url = "https://github.com/jnurmine/Zenburn"
-  },
   ["alpha-nvim"] = {
     config = { "\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0" },
     loaded = true,
@@ -120,11 +115,6 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
-  everforest = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   fd = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/fd",
@@ -145,11 +135,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
-  ["leaf.nvim"] = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/leaf.nvim",
-    url = "https://github.com/daschw/leaf.nvim"
   },
   ["leap.nvim"] = {
     loaded = true,
@@ -181,11 +166,6 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  miramare = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/miramare",
-    url = "https://github.com/franbach/miramare"
-  },
   ["mojave-vim-theme"] = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/mojave-vim-theme",
@@ -195,11 +175,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
-  },
-  neovim = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/neovim",
-    url = "https://github.com/rose-pine/neovim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -268,12 +243,6 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["poimandres.nvim"] = {
-    config = { "\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15poimandres\frequire\0" },
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/poimandres.nvim",
-    url = "https://github.com/olivercederborg/poimandres.nvim"
-  },
   ripgrep = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/ripgrep",
@@ -335,11 +304,6 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-transparent",
     url = "https://github.com/tribela/vim-transparent"
   },
-  vulpo = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vulpo",
-    url = "https://github.com/novasenco/vulpo"
-  },
   yui = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/yui",
@@ -348,22 +312,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: fidget.nvim
-time([[Config for fidget.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
-time([[Config for fidget.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
--- Config for: poimandres.nvim
-time([[Config for poimandres.nvim]], true)
-try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15poimandres\frequire\0", "config", "poimandres.nvim")
-time([[Config for poimandres.nvim]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
 time([[Config for alpha-nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

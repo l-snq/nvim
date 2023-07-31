@@ -17,10 +17,6 @@ require('leap').add_default_mappings()
 require('nvim-ts-autotag').setup()
 -- colorizer for hex codes
 
-require('rose-pine').setup( {
-
- disable_background = true,
-})
 require'colorizer'.setup()
 require("bufferline").setup({
     options = {
