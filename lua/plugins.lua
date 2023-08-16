@@ -80,11 +80,10 @@ return require('packer').startup(function(use)
 
   -- colors
   use 'zefei/cake16'
-  use 'marcopaganini/mojave-vim-theme'
   use 'lvim-tech/lvim-colorscheme'
   use 'cideM/yui'
-  use 'junegunn/seoul256.vim'
-
+  use 'bluz71/vim-moonfly-colors'
+  use 'idbrii/vim-sandydune'
   use { 'nvim-tree/nvim-tree.lua'}
   use { -- webdev icons 
 
