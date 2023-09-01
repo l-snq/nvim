@@ -48,6 +48,7 @@ vim.g.mapleader = ','
 vim.g.maplocalleader = ', '
 
 vim.cmd[[set wrap linebreak]]
+vim.cmd[[set clipboard+=unnamedplus]]
 
 vim.diagnostic.config({
   float = {
