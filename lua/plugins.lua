@@ -22,9 +22,6 @@ return require('packer').startup(function(use)
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
-      -- Useful status updates for LSP
-      'j-hui/fidget.nvim',
-
       -- Additional lua configuration, makes nvim stuff amazing
       'folke/neodev.nvim',
     },
@@ -79,6 +76,7 @@ return require('packer').startup(function(use)
   use 'tribela/vim-transparent'
 
   -- colors
+  use 'jalvesaq/southernlights'
   use 'zefei/cake16'
   use 'lvim-tech/lvim-colorscheme'
   use 'cideM/yui'
