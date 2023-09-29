@@ -127,7 +127,7 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   use 'nvim-lualine/lualine.nvim'
-  use {'lukas-reineke/indent-blankline.nvim', version = "2.20.8"}
+  -- use {'lukas-reineke/indent-blankline.nvim', opts = {}, version = "2.20.8"}
   -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
