@@ -82,6 +82,10 @@ return require('packer').startup(function(use)
   use 'cideM/yui'
   use 'bluz71/vim-moonfly-colors'
   use 'idbrii/vim-sandydune'
+  use 'mihaifm/4colors'
+  use 'rayes0/blossom.vim'
+  use 'kooparse/vim-color-desert-night'
+
   use { 'nvim-tree/nvim-tree.lua'}
   use { -- webdev icons 
 
@@ -123,7 +127,8 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   use 'nvim-lualine/lualine.nvim'
-  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+  use {'lukas-reineke/indent-blankline.nvim', version = "2.20.8"}
+  -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
   use {'akinsho/bufferline.nvim', tag = 'v3.*', requries = 'nvim-tree/nvim-web-devicons'}
