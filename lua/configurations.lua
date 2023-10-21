@@ -337,6 +337,10 @@ mason_lspconfig.setup_handlers {
 -- set up so that wgsl files are read for syntax
 vim.cmd[[
   au BufNewFile,BufRead *.wgsl set filetype=wgsl
+  set softtabstop=4
+  set tabstop=4
+  set shiftwidth=4
+  set expandtab
 ]]
 
 -- Turn on lsp status information

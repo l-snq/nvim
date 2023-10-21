@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["4colors"] = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/4colors",
-    url = "https://github.com/mihaifm/4colors"
-  },
   ["Comment.nvim"] = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/Comment.nvim",
@@ -171,6 +166,11 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["mountaineer.vim"] = {
+    loaded = true,
+    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/mountaineer.vim",
+    url = "https://github.com/thenitecoder/mountaineer.vim"
+  },
   ["neodev.nvim"] = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/neodev.nvim",
@@ -253,6 +253,11 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
+  ["seoul256.vim"] = {
+    loaded = true,
+    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/seoul256.vim",
+    url = "https://github.com/junegunn/seoul256.vim"
+  },
   southernlights = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/southernlights",
@@ -274,10 +279,10 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
-  ["vim-color-desert-night"] = {
+  ["vim-colors-paramount"] = {
     loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-color-desert-night",
-    url = "https://github.com/kooparse/vim-color-desert-night"
+    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-colors-paramount",
+    url = "https://github.com/owickstrom/vim-colors-paramount"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -288,11 +293,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-glsl",
     url = "https://github.com/tikhomirov/vim-glsl"
-  },
-  ["vim-moonfly-colors"] = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
-    url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   ["vim-rhubarb"] = {
     loaded = true,
@@ -318,11 +318,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-transparent",
     url = "https://github.com/tribela/vim-transparent"
-  },
-  yui = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/yui",
-    url = "https://github.com/cideM/yui"
   }
 }
 
@@ -331,14 +326,14 @@ time([[Defining packer_plugins]], false)
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
-time([[Config for alpha-nvim]], false)
 -- Config for: fidget.nvim
 time([[Config for fidget.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
 time([[Config for fidget.nvim]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

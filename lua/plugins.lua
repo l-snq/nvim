@@ -79,12 +79,11 @@ return require('packer').startup(function(use)
   use 'jalvesaq/southernlights'
   use 'zefei/cake16'
   use 'lvim-tech/lvim-colorscheme'
-  use 'cideM/yui'
-  use 'bluz71/vim-moonfly-colors'
+  use 'thenitecoder/mountaineer.vim'
   use 'idbrii/vim-sandydune'
-  use 'mihaifm/4colors'
   use 'rayes0/blossom.vim'
-  use 'kooparse/vim-color-desert-night'
+  use 'junegunn/seoul256.vim'
+  use 'owickstrom/vim-colors-paramount'
 
   use { 'nvim-tree/nvim-tree.lua'}
   use { -- webdev icons 
