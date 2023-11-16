@@ -67,11 +67,6 @@ return require('packer').startup(function(use)
 
   use {'neoclide/coc.nvim', branch = 'release'}
 
-  use { -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
-  }
-
   -- for transparency:
   use 'tribela/vim-transparent'
 
