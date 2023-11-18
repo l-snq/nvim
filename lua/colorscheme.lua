@@ -1,4 +1,4 @@
 vim.o.termguicolors = true
 vim.g.seoul256_background = 234
 
-vim.cmd [[colorscheme seoul256]]
+vim.cmd [[colorscheme southernlights]]
