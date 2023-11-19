@@ -78,6 +78,9 @@ return require('packer').startup(function(use)
   use 'idbrii/vim-sandydune'
   use 'rayes0/blossom.vim'
   use 'junegunn/seoul256.vim'
+  use 'tpope/vim-vividchalk'
+  use 'agude/vim-eldar'
+  use 'aperezdc/vim-elrond'
 
   use { 'nvim-tree/nvim-tree.lua'}
   use { -- webdev icons 
