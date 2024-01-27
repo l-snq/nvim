@@ -17,8 +17,6 @@ vim.cmd[[
   
   tnoremap <esc> <C-\><C-N>
 
-  set clipboard+=unnamedplus
-
   inoremap <silent><expr> <c-space> coc#refresh()
 
   inoremap <expr> <c-1> coc#pum_visible() ? coc#pum#next(1) : "\<c-1>"
