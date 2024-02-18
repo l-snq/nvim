@@ -90,6 +90,11 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["candle-grey"] = {
+    loaded = true,
+    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/candle-grey",
+    url = "https://github.com/aditya-azad/candle-grey"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/coc.nvim",
@@ -115,6 +120,11 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["lvim-colorscheme"] = {
+    loaded = true,
+    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/lvim-colorscheme",
+    url = "https://github.com/lvim-tech/lvim-colorscheme"
+  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
@@ -129,6 +139,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  muon = {
+    loaded = true,
+    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/muon",
+    url = "https://github.com/gregsexton/muon"
   },
   ["neodev.nvim"] = {
     loaded = true,
@@ -223,6 +238,16 @@ _G.packer_plugins = {
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  ["vim-atomic"] = {
+    loaded = true,
+    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-atomic",
+    url = "https://github.com/gerardbm/vim-atomic"
+  },
+  ["vim-desert-warm-256"] = {
+    loaded = true,
+    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-desert-warm-256",
+    url = "https://github.com/rainux/vim-desert-warm-256"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -232,11 +257,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-glsl",
     url = "https://github.com/tikhomirov/vim-glsl"
-  },
-  ["vim-hemisu"] = {
-    loaded = true,
-    path = "/home/ttj/.local/share/nvim/site/pack/packer/start/vim-hemisu",
-    url = "https://github.com/noahfrederick/vim-hemisu"
   },
   ["vim-rhubarb"] = {
     loaded = true,
