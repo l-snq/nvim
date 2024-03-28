@@ -33,14 +33,34 @@ return {
       local cmp_action = lsp_zero.cmp_action()
 
       cmp.setup({
-        formatting = lsp_zero.cmp_format(),
-        mapping = cmp.mapping.preset.insert({
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-d>'] = cmp.mapping.scroll_docs(4),
-          ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-          ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-        })
+      	  sources = {
+	    {name = 'nvim_lsp'},
+	  },
+	  mapping = {
+	    ['<CR>'] = cmp.mapping.confirm({select = false}),
+	    ['<C-e>'] = cmp.mapping.abort(),
+	    ['<C-k>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
+	    ['<C-j>'] = cmp.mapping.select_next_item({behavior = 'select'}),
+	    ['<C-p>'] = cmp.mapping(function()
+	      if cmp.visible() then
+		cmp.select_prev_item({behavior = 'insert'})
+	      else
+		cmp.complete()
+	      end
+	    end),
+	    ['<C-n>'] = cmp.mapping(function()
+	      if cmp.visible() then
+		cmp.select_next_item({behavior = 'insert'})
+	      else
+		cmp.complete()
+	      end
+	    end),
+	  },
+	  snippet = {
+	    expand = function(args)
+	      require('luasnip').lsp_expand(args.body)
+	    end,
+	  },
       })
     end
   },
