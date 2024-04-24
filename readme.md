@@ -10,7 +10,5 @@ Plugins I use:
 - leap
 - trouble
 - telescope w/ ripgrep
-- bufferline
-- lazy.nvim
 - ? a file explorer ? (actually just use ranger)
 
