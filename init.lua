@@ -15,5 +15,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 vim.g.mapleader = ","
+vim.keymap.set('n', '<leader>zz', ':write<CR>', {})
 
 require("lazy").setup("plugins")
