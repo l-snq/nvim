@@ -8,7 +8,7 @@ return {
 	vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 	vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 	vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-	vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true})
-	vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true})
+	vim.keymap.set('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true})
+	vim.keymap.set('n', '<S-Tab>', ':bprev<CR>', { noremap = true, silent = true})
       end , 
 }
