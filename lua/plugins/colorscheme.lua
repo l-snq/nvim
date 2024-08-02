@@ -1,10 +1,13 @@
 return {
 	{"junegunn/seoul256.vim"},
-	{"znake/znake-vim"},
-	{"vim-scripts/chlordane.vim"},
-	{"itchyny/landscape.vim"},
 	{
-		"LazyVim/LazyVim",
-		opts = { colorscheme = "default"},
+		"iagorrr/noctishc.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+		   -- load the colorscheme here
+		   vim.cmd([[colorscheme noctishc]])
+		end,
 	},
+	{"vim-scripts/chlordane.vim"},
 }
