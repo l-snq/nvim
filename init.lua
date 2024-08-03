@@ -16,5 +16,16 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 vim.g.mapleader = ","
 vim.keymap.set('n', '<leader>zz', ':write<CR>', {})
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', {})
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>', {})
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', {})
 
+--[[
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+]]
 require("lazy").setup("plugins")
