@@ -83,7 +83,7 @@ return {
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = {'tsserver', 'rust_analyzer', 'cssls', 'eslint'},
+        ensure_installed = {'ts_ls', 'rust_analyzer', 'cssls', 'eslint'},
         handlers = {
           lsp_zero.default_setup,
           lua_ls = function()
