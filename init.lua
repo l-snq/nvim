@@ -19,6 +19,7 @@ vim.opt.signcolumn = "number"
 vim.g.mapleader = ","
 vim.cmd[[
 	set clipboard=unnamedplus
+	colorscheme vim
 ]]
 vim.keymap.set('n', '<leader>ww', ':write<CR>', {})
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
