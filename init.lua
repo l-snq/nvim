@@ -19,7 +19,7 @@ vim.opt.signcolumn = "number"
 vim.g.mapleader = ","
 vim.cmd[[
 	set clipboard=unnamedplus
-	colorscheme vim
+	colorscheme default 
 ]]
 vim.keymap.set('n', '<leader>ww', ':write<CR>', {})
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
@@ -34,4 +34,5 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 ]]
+require("lualine").setup()
 require("lazy").setup("plugins")
