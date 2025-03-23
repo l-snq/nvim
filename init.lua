@@ -16,11 +16,10 @@ vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
-vim.opt.background = "light"
+vim.opt.background = "dark"
 vim.g.mapleader = ","
 vim.cmd[[
 	set clipboard=unnamedplus
-	colorscheme default 
 ]]
 vim.keymap.set('n', '<leader>ww', ':write<CR>', {})
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
