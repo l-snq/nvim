@@ -1,3 +1,3 @@
 return {
-	'aditya-azad/candle-grey',
+	"gambhirsharma/vesper.nvim"
 }
