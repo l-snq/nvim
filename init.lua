@@ -21,6 +21,8 @@ vim.g.mapleader = ","
 vim.cmd[[
 	set clipboard=unnamedplus
 ]]
+vim.keymap.set('n', '<leader>vs', ':vsplit<CR>', {})
+vim.keymap.set('n', '<leader>hs', ':split<CR>', {})
 vim.keymap.set('n', '<leader>ww', ':write<CR>', {})
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', {})
