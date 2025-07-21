@@ -21,16 +21,16 @@ let g:colors_name="candle"
 " --------------------------------
 " Editor settings
 " --------------------------------
-hi Normal          ctermfg=White        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
-hi Cursor          ctermfg=White        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
-hi CursorLine      ctermfg=White        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
+hi Normal          ctermfg=DarkGray        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
+hi Cursor          ctermfg=DarkGray        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
+hi CursorLine      ctermfg=DarkGray        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
 hi LineNr          ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 hi CursorLineNR    ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 
 " -----------------
 " - Number column -
 " -----------------
-hi CursorColumn    ctermfg=NONE         ctermbg=Black    cterm=NONE    guifg=NONE       guibg=#0D0D0D    gui=NONE
+hi CursorColumn    ctermfg=DarkYellow         ctermbg=Black    cterm=NONE    guifg=NONE       guibg=#0D0D0D    gui=NONE
 hi FoldColumn      ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 hi SignColumn      ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 hi Folded          ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
@@ -47,9 +47,9 @@ hi TabLineSel      ctermfg=Black        ctermbg=Black    cterm=NONE    guifg=#0D
 " -------------------------------
 " - File Navigation / Searching -
 " -------------------------------
-hi Directory       ctermfg=White        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
-hi Search          ctermfg=White        ctermbg=210      cterm=NONE    guifg=#0D0D0D    guibg=#D99962    gui=NONE
-hi IncSearch       ctermfg=White        ctermbg=210      cterm=NONE    guifg=#0D0D0D    guibg=#D99962    gui=NONE
+hi Directory       ctermfg=DarkGray        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
+hi Search          ctermfg=DarkGray        ctermbg=210      cterm=NONE    guifg=#0D0D0D    guibg=#D99962    gui=NONE
+hi IncSearch       ctermfg=DarkGray        ctermbg=210      cterm=NONE    guifg=#0D0D0D    guibg=#D99962    gui=NONE
 
 " -----------------
 " - Prompt/Status -
@@ -58,7 +58,7 @@ hi StatusLine      ctermfg=210          ctermbg=Black    cterm=NONE    guifg=#D9
 hi StatusLineNC    ctermfg=Black        ctermbg=Black    cterm=NONE    guifg=#0D0D0D    guibg=#0D0D0D    gui=NONE
 hi WildMenu        ctermfg=210          ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
 hi Question        ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
-hi Title           ctermfg=White        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
+hi Title           ctermfg=DarkGray        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
 hi ModeMsg         ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 hi MoreMsg         ctermfg=210          ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
 
@@ -70,15 +70,15 @@ hi Visual          ctermfg=White        ctermbg=DarkGray     cterm=NONE    guifg
 hi VisualNOS       ctermfg=White        ctermbg=DarkGray     cterm=NONE    guifg=#D99962    guibg=#404040    gui=NONE
 hi NonText         ctermfg=Black        ctermbg=Black        cterm=NONE    guifg=#0D0D0D    guibg=#0D0D0D    gui=NONE
 
-hi Todo            ctermfg=White        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
-hi Underlined      ctermfg=White        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
+hi Todo            ctermfg=Yellow        ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
+hi Underlined      ctermfg=White       ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
 hi Error           ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 hi ErrorMsg        ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 hi WarningMsg      ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 hi Ignore          ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 hi SpecialKey      ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
-hi WhiteSpaceChar  ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
-hi WhiteSpace      ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
+hi SpaceChar  ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
+hi Space      ctermfg=DarkGray     ctermbg=Black    cterm=NONE    guifg=#404040    guibg=#0D0D0D    gui=NONE
 
 " --------------------------------
 " Variable types
@@ -91,8 +91,8 @@ hi Number          ctermfg=Gray     ctermbg=Black    cterm=NONE    guifg=#8C8C8C
 hi Boolean         ctermfg=Gray     ctermbg=Black    cterm=NONE    guifg=#8C8C8C    guibg=#0D0D0D    gui=NONE
 hi Float           ctermfg=Gray     ctermbg=Black    cterm=NONE    guifg=#8C8C8C    guibg=#0D0D0D    gui=NONE
 
-hi Identifier      ctermfg=White    ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
-hi Function        ctermfg=White    ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
+hi Identifier      ctermfg=DarkYellow    ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
+hi Function        ctermfg=LightYellow    ctermbg=Black    cterm=NONE    guifg=#D99962    guibg=#0D0D0D    gui=NONE
 
 " --------------------------------
 " Language constructs
