@@ -20,6 +20,7 @@ vim.opt.background = "dark"
 vim.g.mapleader = ","
 vim.cmd[[
 	set clipboard=unnamedplus
+	hi EndOfBuffer guibg=NONE ctermbg=NONE
 ]]
 vim.keymap.set('n', '<leader>vs', ':vsplit<CR>', {})
 vim.keymap.set('n', '<leader>hs', ':split<CR>', {})
