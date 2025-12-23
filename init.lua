@@ -17,6 +17,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 vim.opt.background = "dark"
+vim.opt.swapfile = true
 vim.g.mapleader = ","
 vim.cmd[[
 	set clipboard=unnamedplus
