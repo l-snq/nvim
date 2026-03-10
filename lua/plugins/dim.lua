@@ -1,8 +1,9 @@
+
 return {
-	'l-snq/limited',
+	'jeffkreeftmeijer/vim-dim',
 	lazy = false,
 	priority = 1000,
 	config = function()
-		 --vim.cmd('colorscheme limited')
+		 vim.cmd('colorscheme dim')
 	end,
 }

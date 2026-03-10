@@ -22,5 +22,6 @@
   "tr100.vim": { "branch": "main", "commit": "5a340b998c1ed43a9edfda973ab11b20b447fdd9" },
   "transparent.nvim": { "branch": "main", "commit": "a4145c52f5421f1626a4d7dc0f41e785c4439944" },
   "trouble.nvim": { "branch": "main", "commit": "bd67efe408d4816e25e8491cc5ad4088e708a69a" },
-  "vesper.nvim": { "branch": "main", "commit": "5dcce3049e77700cb4b4968581122fb2e44079f8" }
+  "vesper.nvim": { "branch": "main", "commit": "5dcce3049e77700cb4b4968581122fb2e44079f8" },
+  "vim-dim": { "branch": "main", "commit": "2b560e3810d56546b1ccfcc977eb9890d50fe574" }
 }
