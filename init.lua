@@ -1,3 +1,4 @@
+vim.env.PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:" .. vim.env.PATH
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -31,7 +32,9 @@ vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', {})
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>', {})
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', {})
-
+vim.keymap.set("n", "<leader>tc", function()
+  require("treesitter-context").toggle()
+end, { desc = "Toggle Treesitter Context" })
 --[[
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
